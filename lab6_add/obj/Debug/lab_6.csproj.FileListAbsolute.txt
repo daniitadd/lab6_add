@@ -1,0 +1,44 @@
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.csproj.AssemblyReference.cache
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.Properties.Resources.resources
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.csproj.GenerateResource.cache
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.csproj.CoreCompileInputs.cache
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.Form1.resources
+C:\Users\Mariia\Desktop\KPP\6\lab_6\bin\Debug\lab_6.exe.config
+C:\Users\Mariia\Desktop\KPP\6\lab_6\bin\Debug\lab_6.exe
+C:\Users\Mariia\Desktop\KPP\6\lab_6\bin\Debug\lab_6.pdb
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.exe
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.pdb
+C:\Users\Mariia\Desktop\KPP\6\lab_6\obj\Debug\lab_6.exe.config
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\bin\Debug\lab_6.exe.config
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\bin\Debug\lab_6.exe
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\bin\Debug\lab_6.pdb
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.csproj.AssemblyReference.cache
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.exe.config
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.Form1.resources
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.Properties.Resources.resources
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.csproj.GenerateResource.cache
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.csproj.CoreCompileInputs.cache
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.exe
+C:\Users\Mariia\Desktop\KPP\6\lab_6 - Copy\obj\Debug\lab_6.pdb
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\bin\Debug\lab_6.exe.config
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\bin\Debug\lab_6.exe
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\bin\Debug\lab_6.pdb
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.csproj.AssemblyReference.cache
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.exe.config
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.Form1.resources
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.Properties.Resources.resources
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.csproj.GenerateResource.cache
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.csproj.CoreCompileInputs.cache
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.exe
+D:\Dana\uni\3 курс\1 семестр\КПП\6\lab_6\obj\Debug\lab_6.pdb
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\bin\Debug\lab_6.exe.config
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\bin\Debug\lab_6.exe
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\bin\Debug\lab_6.pdb
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.csproj.AssemblyReference.cache
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.exe.config
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.Form1.resources
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.Properties.Resources.resources
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.csproj.GenerateResource.cache
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.csproj.CoreCompileInputs.cache
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.exe
+D:\Dana\uni\3 курс\1 семестр\КПП\lab6_add\obj\Debug\lab_6.pdb
