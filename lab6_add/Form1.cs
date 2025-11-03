@@ -170,10 +170,6 @@ namespace lab_6
                 a[i, N] = B[i + 1];
             }
 
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < N; j++)
-                    C_matrix_dgv[j, i].Value = a[i, j].ToString("G8");
-
             for (int k = 0; k < N; k++)
             {
                 int maxRow = k;
@@ -181,14 +177,11 @@ namespace lab_6
                     if (Math.Abs(a[i, k]) > Math.Abs(a[maxRow, k]))
                         maxRow = i;
 
-                if (maxRow != k)
+                for (int j = 0; j <= N; j++)
                 {
-                    for (int j = 0; j <= N; j++)
-                    {
-                        double tmp = a[k, j];
-                        a[k, j] = a[maxRow, j];
-                        a[maxRow, j] = tmp;
-                    }
+                    double tmp = a[k, j];
+                    a[k, j] = a[maxRow, j];
+                    a[maxRow, j] = tmp;
                 }
 
                 if (Math.Abs(a[k, k]) < 1e-12)
@@ -207,30 +200,18 @@ namespace lab_6
                     for (int j = k; j <= N; j++)
                         a[i, j] -= factor * a[k, j];
                 }
-
-                for (int i = 0; i < N; i++)
-                    for (int j = 0; j < N; j++)
-                        C_matrix_dgv[j, i].Value = a[i, j].ToString("G8");
             }
 
             for (int i = N - 1; i >= 0; i--)
             {
-                double sum = 0.0;
+                X[i + 1] = a[i, N];
                 for (int j = i + 1; j < N; j++)
-                    sum += a[i, j] * X[j + 1]; 
-                double diagVal = a[i, i];
-                if (Math.Abs(diagVal) < 1e-12)
-                {
-                    MessageBox.Show($"Нульовий діагональний елемент на зворотньому ході (рядок {i + 1}).");
-                    return;
-                }
-                X[i + 1] = (a[i, N] - sum) / diagVal;
+                    X[i + 1] -= a[i, j] * X[j + 1];
             }
 
             for (int i = 1; i <= N; i++)
                 X_vector_dgv[0, i - 1].Value = X[i].ToString("G8");
         }
-
 
         private void BCreateGrid_Click(object sender, EventArgs e)
         {
