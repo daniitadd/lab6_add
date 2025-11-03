@@ -6,11 +6,13 @@ namespace lab_6
 {
     public partial class Form1 : Form
     {
+        // Поля класу
         int N = 1;
+        int i = 0, j = 0;
         int Change;
-        double[,] A = new double[7, 7];
-        double[] B = new double[7];
-        double[] X = new double[7];
+        double[,] A = new double[6, 6];
+        double[] B = new double[6];
+        double[] X = new double[6];
 
         public Form1()
         {
@@ -63,100 +65,74 @@ namespace lab_6
             double[,] L = new double[N + 1, N + 1];
             double[,] U = new double[N + 1, N + 1];
 
-            Change = 1;
-            int maxRow = 1;
-            double maxAbs = Math.Abs(A[1, 1]);
-            for (int i = 2; i <= N; i++)
+            for (int k = 1; k <= N; k++)
             {
-                if (Math.Abs(A[i, 1]) > maxAbs)
-                {
-                    maxAbs = Math.Abs(A[i, 1]);
-                    maxRow = i;
-                }
-            }
-            if (maxRow != 1)
-            {
-                Change = maxRow;
-                for (int j = 1; j <= N; j++)
-                {
-                    double tmp = A[1, j];
-                    A[1, j] = A[maxRow, j];
-                    A[maxRow, j] = tmp;
-                }
-            }
+                L[k, k] = 1.0;
 
-            for (int i = 1; i <= N; i++)
-            {
-                for (int j = i; j <= N; j++)
+                for (int j = k; j <= N; j++)
                 {
                     double sum = 0.0;
-                    for (int k = 1; k <= i - 1; k++)
-                        sum += L[i, k] * U[k, j];
-                    U[i, j] = A[i, j] - sum;
+                    for (int m = 1; m <= k - 1; m++)
+                        sum += L[k, m] * U[m, j];
+                    U[k, j] = A[k, j] - sum;
                 }
 
-                L[i, i] = 1.0;
-                for (int j = i + 1; j <= N; j++)
+                for (int i = k + 1; i <= N; i++)
                 {
                     double sum = 0.0;
-                    for (int k = 1; k <= i - 1; k++)
-                        sum += L[j, k] * U[k, i];
-                    if (Math.Abs(U[i, i]) < 1e-12)
+                    for (int m = 1; m <= k - 1; m++)
+                        sum += L[i, m] * U[m, k];
+
+                    if (Math.Abs(U[k, k]) < 1e-12)
                     {
-                        MessageBox.Show($"U[{i},{i}] ≈ 0 — матриця сингулярна");
+                        MessageBox.Show($"U[{k},{k}] ≈ 0 — матриця сингулярна. LU-розклад неможливий.");
                         return;
                     }
-                    L[j, i] = (A[j, i] - sum) / U[i, i];
+                    L[i, k] = (A[i, k] - sum) / U[k, k];
                 }
             }
 
-            for (int i = 1; i <= N; i++)
-                for (int j = 1; j <= N; j++)
-                    C_matrix_dgv[j - 1, i - 1].Value = (i > j) ? L[i, j].ToString("G8") :
-                                                        (i == j ? "1" : U[i, j].ToString("G8"));
+            for (i = 1; i <= N; i++)
+            {
+                for (j = 1; j <= N; j++)
+                {
+                    if (i > j)
+                        C_matrix_dgv[j - 1, i - 1].Value = L[i, j].ToString("G8");
+                    else
+                        C_matrix_dgv[j - 1, i - 1].Value = U[i, j].ToString("G8");
 
-            for (int i = 1; i <= N; i++)
-                for (int j = 1; j <= N; j++)
                     A[i, j] = (i > j) ? L[i, j] : U[i, j];
+                }
+            }
         }
 
         private void Solve(int Change, int N)
         {
-            double[] btemp = new double[N + 1];
-            for (int i = 1; i <= N; i++) btemp[i] = B[i];
-
-            if (Change != 1)
-            {
-                double t = btemp[1];
-                btemp[1] = btemp[Change];
-                btemp[Change] = t;
-            }
-
             double[] y = new double[N + 1];
-            for (int i = 1; i <= N; i++)
+
+            for (i = 1; i <= N; i++)
             {
                 double sum = 0.0;
-                for (int j = 1; j <= i - 1; j++)
+                for (j = 1; j <= i - 1; j++)
                     sum += A[i, j] * y[j];
-                y[i] = btemp[i] - sum;
+                y[i] = B[i] - sum;
             }
 
-            for (int i = N; i >= 1; i--)
+            for (i = N; i >= 1; i--)
             {
                 double sum = 0.0;
-                for (int j = i + 1; j <= N; j++)
+                for (j = i + 1; j <= N; j++)
                     sum += A[i, j] * X[j];
                 double diag = A[i, i];
                 if (Math.Abs(diag) < 1e-12)
                 {
-                    MessageBox.Show($"U[{i},{i}] ≈ 0, неможливо обчислити");
+                    MessageBox.Show($"U[{i},{i}] ≈ 0, неможливо обчислити (ділення на нуль)");
                     return;
                 }
                 X[i] = (y[i] - sum) / diag;
             }
 
-            for (int i = 1; i <= N; i++)
-                X_vector_dgv[0, i - 1].Value = X[i].ToString("G8");
+            UpdateXGrid();
         }
 
         private void SolveGauss(int N)
@@ -209,7 +185,12 @@ namespace lab_6
                     X[i + 1] -= a[i, j] * X[j + 1];
             }
 
-            for (int i = 1; i <= N; i++)
+            UpdateXGrid();
+        }
+
+        private void UpdateXGrid()
+        {
+            for (i = 1; i <= N; i++)
                 X_vector_dgv[0, i - 1].Value = X[i].ToString("G8");
         }
 
